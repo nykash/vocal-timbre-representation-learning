@@ -1,8 +1,8 @@
 # Vocal Timbre Representation Learning
 
-A research-to-product prototype for learning compact vocal representations from audio, probing what those representations capture, and using them in an interactive vocal coach.
+A prototype for learning compact vocal representations from audio with the intent to classify/detect different quality of timbre in human voices to create an interactive vocal coach.
 
-The core model is a variational autoencoder trained without artist labels to reconstruct log-mel spectrogram chunks. Labels enter later, through a lightweight supervised Gaussian probe used to evaluate and interpret the latent space. A separate experiment used noisy style tags as weak supervision, but that objective was not retained.
+The core model is a variational autoencoder trained without artist labels to reconstruct log-mel spectrogram chunks. Labels enter later, through a lightweight supervised Gaussian probe used to evaluate and interpret the latent space.
 
 ## Why I built it
 
@@ -13,14 +13,14 @@ Handcrafted timbre measurements are easy to explain but discard much of a voice'
 3. inspect whether the latent geometry tracks singer or style information; and
 4. connect the result to a real interface rather than stop at an offline experiment.
 
-## Research contributions
+## Investigations
 
 - **Leakage-aware evaluation.** Splits happen by track, never by spectrogram chunk. Normalization and artist prototypes are fit on training tracks only.
 - **Scalable feature caching.** Each track's chunks are cached independently, invalidated by the audio metadata and feature configuration, and loaded through a bounded in-memory cache.
 - **Variable-length inference.** Six-second chunk embeddings are averaged into one recording representation.
 - **Honest representation probing.** A diagonal Gaussian per artist measures separability without putting artist labels into the VAE objective.
 - **Negative-result analysis.** A tag-IoU auxiliary loss was tested and disabled after it compressed the geometry; the retained latent space also has weak global agreement with subjective style tags.
-- **Research-to-product path.** The same representation is exposed through an audio API and used by a React/LLM vocal-coaching flow.
+- **Usability.** The same representation is exposed through an audio API and used by a React/LLM vocal-coaching flow.
 
 ## Model
 
