@@ -1,0 +1,7 @@
+track_id,path,artist
+artist_a_song_01,audio/artist_a_song_01.wav,Artist A
+artist_a_song_02,audio/artist_a_song_02.wav,Artist A
+artist_a_song_03,audio/artist_a_song_03.wav,Artist A
+artist_b_song_01,audio/artist_b_song_01.wav,Artist B
+artist_b_song_02,audio/artist_b_song_02.wav,Artist B
+artist_b_song_03,audio/artist_b_song_03.wav,Artist B

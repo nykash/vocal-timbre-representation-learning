@@ -1,0 +1,7 @@
+.feature-cache/
+artifacts/
+data/
+examples/audio/
+__pycache__/
+*.pyc
+.DS_Store
